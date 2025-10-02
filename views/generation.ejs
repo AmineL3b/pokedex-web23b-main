@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/inc/styles.css">
+</head>
+<body>
+    <h1>Pokedex</h1>
+    <div>
+        <ul class="pokemon-list">
+            <% for (let pokemon of pokemons) { %>
+                <li>
+                    <a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/inc/styles.css">
+    <div id="pokemoni">
+        <div class="pokemon">
+            <div id="pokemon1">
+                <h2><%= pokemon.name %></h2>
+                <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+            </div>
+
+            <div class="types-container">
+                <% pokemon.types.forEach(type => { %>
+                    <span class="type-badge"><%= type.type.name %></span>
+                <% }) %>
+            </div>
+
+            <div class="stats-container">
+                <% pokemon.stats.forEach(stat => { %>
+                    <li>
+
+                        <strong>
+                            <% if (stat.stat.name === 'hp') { %> HP
+                            <% } else if (stat.stat.name === 'attack') { %> Hyökkäys
+                            <% } else if (stat.stat.name === 'defense') { %> Puolustus
+                            <% } else if (stat.stat.name === 'special-attack') { %> Erikoishyökkäys
+                            <% } else if (stat.stat.name === 'special-defense') { %> Erikoispuolustus
+                            <% } else if (stat.stat.name === 'speed') { %> Nopeus
+                            <% } %>
+                        </strong>
+
+                        <%= stat.base_stat %>
+                    </li>
+                <% }) %>
+            </div>
+        </div>
+    </div>
